@@ -1,0 +1,328 @@
+.home {
+  width: 100%;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 78% 12%, rgb(227 233 255 / 55%), transparent 35%),
+    #fbfcfe;
+}
+
+.hero {
+  position: relative;
+  display: grid;
+  width: min(100% - 64px, 1240px);
+  min-height: 580px;
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 0.9fr);
+  align-items: center;
+  gap: 38px;
+  margin: 0 auto;
+  padding: 54px 0 64px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 610px;
+}
+
+.hero-eyebrow,
+.home-section-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #586a91;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.hero-eyebrow {
+  padding: 9px 12px;
+  border: 1px solid #e1e7f5;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 72%);
+}
+
+.hero-eyebrow-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #43ad7d;
+  box-shadow: 0 0 0 4px rgb(67 173 125 / 12%);
+}
+
+.hero h1 {
+  margin: 25px 0 18px;
+  color: #19243a;
+  font-size: clamp(3.2rem, 6vw, 5.2rem);
+  font-weight: 800;
+  letter-spacing: -0.075em;
+  line-height: 1.03;
+}
+
+.hero h1 span {
+  color: var(--color-primary);
+}
+
+.hero p {
+  max-width: 470px;
+  margin: 0 0 27px;
+  color: #667287;
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+.shop-now-btn {
+  display: inline-flex;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 0 22px;
+  border-radius: 11px;
+  background: var(--color-primary);
+  box-shadow: 0 10px 20px rgb(54 89 217 / 22%);
+  color: white;
+  font-size: 14px;
+  font-weight: 750;
+  text-decoration: none;
+  transition: transform 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+}
+
+.shop-now-btn span {
+  font-size: 20px;
+  line-height: 1;
+  transition: transform 180ms ease;
+}
+
+.shop-now-btn:hover {
+  transform: translateY(-2px);
+  background: var(--color-primary-dark);
+  box-shadow: 0 14px 25px rgb(54 89 217 / 28%);
+}
+
+.shop-now-btn:hover span {
+  transform: translateX(3px);
+}
+
+.hero-perks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  margin-top: 37px;
+}
+
+.hero-perks span {
+  color: #727f92;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.hero-perks strong {
+  margin-right: 5px;
+  color: #8c9ab0;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+}
+
+.hero-art {
+  position: relative;
+  display: grid;
+  min-height: 420px;
+  place-items: center;
+  isolation: isolate;
+}
+
+.hero-orbit {
+  position: absolute;
+  border: 1px solid rgb(81 110 208 / 13%);
+  border-radius: 50%;
+  transform: rotate(-26deg);
+}
+
+.hero-orbit-one {
+  width: min(100%, 440px);
+  height: 320px;
+}
+
+.hero-orbit-two {
+  width: min(78%, 350px);
+  height: 260px;
+  transform: rotate(32deg);
+}
+
+.hero-product {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgb(255 255 255 / 65%);
+  box-shadow: 0 30px 70px rgb(40 55 100 / 18%);
+}
+
+.hero-product-back {
+  width: 210px;
+  height: 250px;
+  border-radius: 38px;
+  background:
+    radial-gradient(circle at 30% 24%, rgb(255 255 255 / 55%), transparent 25%),
+    linear-gradient(145deg, #eedcc9, #dfbfa5);
+  color: rgb(255 255 255 / 85%);
+  font-size: 82px;
+  transform: rotate(13deg) translate(64px, -7px);
+}
+
+.hero-product-front {
+  width: 220px;
+  height: 260px;
+  border-radius: 42px;
+  background:
+    radial-gradient(circle at 65% 20%, rgb(255 255 255 / 35%), transparent 25%),
+    linear-gradient(150deg, #758af1, #3d5bd0 58%, #3044a2);
+  color: rgb(255 255 255 / 92%);
+  font-family: Manrope, "Segoe UI", sans-serif;
+  font-size: 112px;
+  font-weight: 800;
+  letter-spacing: -0.11em;
+  transform: rotate(-11deg) translate(-35px, 20px);
+}
+
+.hero-floating-tag {
+  position: absolute;
+  right: 4%;
+  bottom: 17%;
+  padding: 14px 17px;
+  border: 1px solid rgb(255 255 255 / 78%);
+  border-radius: 13px;
+  background: rgb(255 255 255 / 86%);
+  box-shadow: 0 12px 30px rgb(35 48 80 / 12%);
+  color: #56647c;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.5;
+  transform: rotate(4deg);
+}
+
+.hero-sparkle {
+  position: absolute;
+  color: #e5a844;
+}
+
+.hero-sparkle-one {
+  top: 10%;
+  right: 17%;
+  font-size: 31px;
+}
+
+.hero-sparkle-two {
+  bottom: 17%;
+  left: 7%;
+  color: #7088e8;
+  font-size: 27px;
+}
+
+.home-discover {
+  display: flex;
+  width: min(100% - 64px, 1240px);
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 0 auto;
+  padding: 31px 0 58px;
+  border-top: 1px solid #e9edf3;
+}
+
+.home-discover h2 {
+  margin: 8px 0 5px;
+  font-size: 25px;
+  letter-spacing: -0.04em;
+}
+
+.home-discover p {
+  color: #7a8595;
+  font-size: 13px;
+}
+
+.home-browse-link {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 15px;
+  border: 1px solid #dce3f5;
+  border-radius: 10px;
+  background: white;
+  color: var(--color-primary);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: border-color 160ms ease, background-color 160ms ease;
+}
+
+.home-browse-link:hover {
+  border-color: #aebdf0;
+  background: #f7f8ff;
+}
+
+@media (max-width: 850px) {
+  .hero {
+    min-height: 530px;
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 0.8fr);
+    gap: 5px;
+  }
+
+  .hero-art {
+    min-height: 350px;
+    transform: scale(0.86);
+  }
+
+  .hero-product-front {
+    width: 190px;
+    height: 230px;
+  }
+
+  .hero-product-back {
+    width: 180px;
+    height: 220px;
+  }
+}
+
+@media (max-width: 650px) {
+  .hero {
+    width: min(100% - 36px, 520px);
+    min-height: auto;
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding: 48px 0 37px;
+  }
+
+  .hero h1 {
+    margin-top: 21px;
+    font-size: clamp(3rem, 14vw, 4.4rem);
+  }
+
+  .hero p {
+    max-width: 420px;
+    font-size: 15px;
+  }
+
+  .hero-perks {
+    gap: 8px 14px;
+    margin-top: 25px;
+  }
+
+  .hero-art {
+    min-height: 300px;
+    margin-top: -2px;
+    transform: scale(0.78);
+  }
+
+  .home-discover {
+    width: min(100% - 36px, 520px);
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 25px 0 38px;
+  }
+
+  .home-discover h2 {
+    font-size: 22px;
+  }
+}

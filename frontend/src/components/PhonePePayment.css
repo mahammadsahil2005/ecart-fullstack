@@ -1,0 +1,131 @@
+.phonepe-payment {
+  display: flex;
+  justify-content: center;
+  padding: 24px 12px;
+}
+
+.phonepe-payment-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 24px;
+  box-sizing: border-box;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  background: #ffffff;
+  color: #222222;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.phonepe-payment-heading {
+  margin-top: 0;
+  color: #5f259f;
+}
+
+.phonepe-payment-muted {
+  color: #666666;
+  font-size: 14px;
+}
+
+.phonepe-payment-amount {
+  margin: 20px 0;
+  padding: 12px;
+  border-radius: 10px;
+  background: #f7f2fc;
+}
+
+.phonepe-payment-instruction {
+  line-height: 1.6;
+}
+
+.phonepe-payment-qr {
+  display: block;
+  width: 250px;
+  max-width: 100%;
+  height: auto;
+  margin: 20px auto;
+}
+
+.phonepe-payment-warning {
+  color: #9a3412;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.phonepe-payment-label {
+  display: block;
+  margin: 18px 0 8px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.phonepe-payment-input {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 12px;
+  box-sizing: border-box;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+}
+
+.phonepe-payment-button {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 8px;
+  background: #5f259f;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.phonepe-payment-pending {
+  margin-top: 18px;
+  padding: 12px;
+  border-radius: 8px;
+  background: #fff7ed;
+  color: #9a3412;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.phonepe-payment-approved,
+.phonepe-payment-rejected {
+  margin-top: 18px;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.phonepe-payment-approved {
+  background: #e7f7ed;
+  color: #176b3a;
+}
+
+.phonepe-payment-rejected,
+.phonepe-payment-error {
+  background: #fff1f0;
+  color: #9f2525;
+}
+
+.phonepe-payment-error {
+  margin: 14px 0 0;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.phonepe-payment-button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.phonepe-payment-footer {
+  margin-top: 20px;
+  color: #666666;
+  font-size: 12px;
+}

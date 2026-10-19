@@ -1,0 +1,38 @@
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+**/application-local.properties
+**/application-prod.properties
+**/secrets/
+**/*secret*
+**/*credentials*
+
+# Frontend dependencies and builds
+**/node_modules/
+**/dist/
+**/coverage/
+
+# Java / Spring Boot build output
+**/target/
+**/.gradle/
+**/build/
+
+# IDE and operating system files
+.vscode/
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Local database backups
+*.sql
+*.dump
+*.bak
+
+# Local debugging logs and uploaded files
+backend/build-error.txt
+backend/uploads/
