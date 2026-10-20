@@ -1,5 +1,7 @@
+
 export const API_BASE_URL = (
-  import.meta.env.VITE_API_BASE_URL || "http://localhost:8081"
+  import.meta.env.VITE_API_BASE_URL ||
+  "http://localhost:8081"
 ).replace(/\/+$/, "");
 
 export function buildApiUrl(path = "") {
@@ -21,9 +23,11 @@ export function buildImageUrl(imageUrl) {
     return "";
   }
 
+  // Return absolute image URLs unchanged.
   if (/^https?:\/\//i.test(normalizedUrl)) {
     return normalizedUrl;
   }
 
+  // Build the image URL using the API base URL.
   return buildApiUrl(normalizedUrl.replace(/^\/+/, ""));
 }
