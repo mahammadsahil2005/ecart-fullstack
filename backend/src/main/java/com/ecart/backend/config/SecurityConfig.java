@@ -1,3 +1,4 @@
+
 package com.ecart.backend.config;
 
 import com.ecart.backend.security.JwtAuthenticationFilter;
@@ -25,7 +26,6 @@ public class SecurityConfig {
 
     public SecurityConfig(
             JwtAuthenticationFilter jwtAuthenticationFilter) {
-
         this.jwtAuthenticationFilter = jwtAuthenticationFilter;
     }
 
@@ -52,7 +52,10 @@ public class SecurityConfig {
             // Authorization rules
             .authorizeHttpRequests(auth -> auth
 
-                .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+                // Allow browser CORS preflight requests
+                .requestMatchers(
+                    HttpMethod.OPTIONS, "/**"
+                ).permitAll()
 
                 // Public user registration and login
                 .requestMatchers(
@@ -61,12 +64,13 @@ public class SecurityConfig {
                     "/api/users/login"
                 ).permitAll()
 
-                // Public admin login and one-time first-admin setup
+                // Public admin login and initial admin setup
                 .requestMatchers(
                     HttpMethod.POST,
                     "/api/admin/login",
                     "/api/admin/register"
                 ).permitAll()
+
                 .requestMatchers(
                     HttpMethod.GET,
                     "/api/admin/setup-status"
@@ -85,40 +89,42 @@ public class SecurityConfig {
                     "/api/products/**",
                     "/api/upload/**"
                 ).hasRole("ADMIN")
+
                 .requestMatchers(
                     HttpMethod.PUT,
                     "/api/products/**"
                 ).hasRole("ADMIN")
+
                 .requestMatchers(
                     HttpMethod.DELETE,
                     "/api/products/**"
                 ).hasRole("ADMIN")
 
-                // Cart access requires a valid authenticated user
+                // Cart access requires authentication
                 .requestMatchers(
                     "/api/cart/**"
                 ).authenticated()
 
-                // Payment submissions require user authentication;
-                // review actions are restricted to admins.
+                // Payment administration is restricted to admins
                 .requestMatchers(
                     "/api/payments/admin/**"
                 ).hasRole("ADMIN")
+
+                // User payment endpoints require USER role
                 .requestMatchers(
                     "/api/payments/**"
                 ).hasRole("USER")
 
-                // Only admins can access admin endpoints
+                // Other admin endpoints require ADMIN role
                 .requestMatchers(
                     "/api/admin/**"
                 ).hasRole("ADMIN")
 
-                // Every other endpoint requires authentication
+                // All remaining endpoints require authentication
                 .anyRequest().authenticated()
             )
 
-            // Process JWTs before Spring Security's
-            // username/password authentication filter
+            // Process JWTs before username/password authentication
             .addFilterBefore(
                 jwtAuthenticationFilter,
                 UsernamePasswordAuthenticationFilter.class
@@ -133,11 +139,12 @@ public class SecurityConfig {
         CorsConfiguration configuration =
                 new CorsConfiguration();
 
-        // Allow Vite's default and fallback localhost development ports.
-        configuration.setAllowedOriginPatterns(
+        // Allow local development and deployed Vercel frontend
+        configuration.setAllowedOrigins(
             List.of(
-                "http://localhost:*",
-                "http://127.0.0.1:*"
+                "http://localhost:5173",
+                "http://127.0.0.1:5173",
+                "https://ecart-fullstack.vercel.app"
             )
         );
 
